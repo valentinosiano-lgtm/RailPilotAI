@@ -2,6 +2,8 @@
 
 RailPilotAI runs a rideable six-car train on a permanent loop around Chernarus in DayZ. It stops at each station for five minutes, operates the level crossings, brakes for large obstacles and resumes from its last valid save after a server restart or crash.
 
+Players receive in-game announcements in Italian when the train arrives, departs or skips a blocked station. Arrival announcements give the stop duration and the next station.
+
 **Route**  
 Komarovo → Kamenka → Zelenogorsk → Myshkino West Yard → Novaya Petrovka → Severograd → Novodmitrovsk → Svetloyarsk → Berezino North → Solnechny → Kamyshovo → Elektrozavodsk → Chernogorsk → Balota → Komarovo
 

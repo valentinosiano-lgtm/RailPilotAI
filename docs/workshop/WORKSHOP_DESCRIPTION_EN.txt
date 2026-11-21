@@ -6,6 +6,7 @@ https://www.youtube.com/watch?v=flaP-WDbHXk
 
 [h2]How it works[/h2]
 [list]
+[*]In-game station announcements tell connected players where the train is, how long it will stop and which station comes next. Announcements are in Italian.
 [*]Level crossing barriers lower before the train arrives and reopen once the last wagon has cleared the road.
 [*]The train brakes for large obstacles. It continues when the track clears. If an obstacle stays in place, the train can jump ahead to a clear stretch of track once everyone has stepped off and there is room for the entire train.
 [*]A narrow construction corridor follows the train's footprint with one metre of clearance on each side. The protection is built into RailPilotAI and includes BaseBuildingPlus support.

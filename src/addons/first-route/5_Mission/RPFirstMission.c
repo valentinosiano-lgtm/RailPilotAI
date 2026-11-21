@@ -27,6 +27,37 @@ class RPFirstRun
     protected bool PrepareRouteWorld() { return true; }
     protected void ReleaseRouteWorld() {}
 
+    protected void BroadcastStationAnnouncement(string message)
+    {
+        Print("[RailPilotRing] STATION_ANNOUNCEMENT " + message);
+        array<Man> players = new array<Man>;
+        GetGame().GetPlayers(players);
+        foreach (Man character : players)
+        {
+            PlayerBase player = PlayerBase.Cast(character);
+            if (player && player.GetIdentity()) player.MessageStatus(message);
+        }
+    }
+
+    protected void AnnounceStation(string eventName, int index)
+    {
+        // The final timetable entry is Komarovo at the start of the next lap.
+        if (index == Route.Stops.Count() - 1) index = 0;
+        RPFirstStop station = Route.Stops[index];
+        string next = Route.Stops[index + 1].Name;
+        string message;
+        if (eventName == "arrival")
+        {
+            int minutes = Math.Round(station.Dwell / 60);
+            message = string.Format("Il convoglio ferroviario è arrivato a %1. Sosterà per %2 minuti, poi ripartirà verso %3.", station.Name, minutes, next);
+        }
+        else if (eventName == "departure")
+            message = string.Format("Il convoglio ferroviario è partito da %1. Prossima fermata: %2.", station.Name, next);
+        else
+            message = string.Format("Il convoglio ferroviario ha saltato la fermata di %1 per un ostacolo. Prossima fermata: %2.", station.Name, next);
+        BroadcastStationAnnouncement(message);
+    }
+
     void Check(bool ok, string text)
     {
         if (ok) Print("[RailPilotGuided] PASS " + text);
@@ -159,12 +190,16 @@ class RPFirstRun
         Service.Tick(dt);
         float clock = Service.Clock();
         bool newLap = Service.Lap() != previousLap;
+        bool skippedStop = forcedStopComplete && oldBlockedStop >= 0 && Service.RPBlockedStopIndex() < 0;
+        int arrivedStation = -1;
+        int departedStation = -1;
         if (newLap)
         {
             previous = 0;
             m_LastStop = 0;
             m_NextHorn = RPFirstRecoveryPhases.HornCount(Route, clock);
             Horns = m_NextHorn;
+            if (!skippedStop) arrivedStation = 0;
             Print("[RailPilotRing] LAP " + Service.Lap().ToString() + " arrives Komarovo");
         }
         if (!newLap && forcedStopComplete && oldBlockedStop >= 0 && clock > previous + dt && clock > Route.DepartureAt(oldBlockedStop))
@@ -172,6 +207,12 @@ class RPFirstRun
             m_LastStop = Math.Max(m_LastStop, oldBlockedStop);
             m_NextHorn = RPFirstRecoveryPhases.HornCount(Route, clock);
             Horns = m_NextHorn;
+        }
+        if (Route.Cyclic && !newLap && !skippedStop && m_LastStop >= 0 && m_LastStop < Route.Stops.Count() - 1)
+        {
+            float departure = Route.DepartureAt(m_LastStop);
+            // The horn is a warning. Announce only once the train starts its leg.
+            if (previous <= departure && clock > departure) departedStation = m_LastStop;
         }
         if (m_NextHorn < Route.Stops.Count() - 1)
         {
@@ -198,9 +239,12 @@ class RPFirstRun
         if (m_RunOver) m_RunOver.Tick(dt, 1, Service.Unit(activeSlot).Speed());
         for (int s = 0; s < Route.Stops.Count(); s++)
         {
-            if (s > m_LastStop && clock >= Route.ArrivalAt(s))
+            if (s <= m_LastStop) continue;
+            float arrival = Route.ArrivalAt(s);
+            if (clock >= arrival)
             {
                 m_LastStop = s;
+                if (Route.Cyclic && !skippedStop && previous < arrival) arrivedStation = s;
                 Print("[RailPilotGuided] FIRST_ARRIVAL " + Route.Stops[s].Name + " clock=" + clock.ToString());
             }
         }
@@ -208,8 +252,14 @@ class RPFirstRun
         {
             m_SaveElapsed += dt;
             bool completeNow = Service.RPBlockedStopTime() >= RPConvoyRoute.FORCED_STOP_SECONDS;
-            if (newLap || m_SaveElapsed >= 1 || oldPhase != RPFirstRecoveryPhases.At(Route, clock) || oldHorn != m_NextHorn || oldBlockedStop != Service.RPBlockedStopIndex() || forcedStopComplete != completeNow) SaveNow();
+            bool announcementDue = arrivedStation >= 0 || departedStation >= 0;
+            bool saveDue = announcementDue || newLap || m_SaveElapsed >= 1 || oldPhase != RPFirstRecoveryPhases.At(Route, clock) || oldHorn != m_NextHorn || oldBlockedStop != Service.RPBlockedStopIndex() || forcedStopComplete != completeNow;
+            if (saveDue && !SaveNow()) return;
         }
+        if (!Route.Cyclic) return;
+        if (skippedStop) AnnounceStation("skip", oldBlockedStop);
+        if (departedStation >= 0) AnnounceStation("departure", departedStation);
+        if (arrivedStation >= 0) AnnounceStation("arrival", arrivedStation);
     }
     RPFirstRecoveryState Capture()
     {
