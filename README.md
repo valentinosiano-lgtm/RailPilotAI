@@ -13,3 +13,7 @@ Komarovo → Kamenka → Zelenogorsk → Myshkino West Yard → Novaya Petrovka 
 The standard mod includes narrow construction protection along the train's path, including support for BaseBuildingPlus. The optional Moving AI Convoy adapter lets supported road convoys wait at closed crossings and continue after the barriers open. [See the crossing demo.](https://www.youtube.com/shorts/LWDcQ2tpJhc)
 
 This repository contains the source snapshot of the tested Chernarus candidate. Workshop publication is pending. Building from a clean checkout is a planned community contribution.
+
+## Licence
+
+The original RailPilotAI code is available under the [GNU General Public License v3.0](LICENSE). You can fork and modify it. When distributing a modified version, keep the covered code under GPLv3 and provide its corresponding source. See the [credits and asset terms](docs/CREDITS.md) for the recordings and Bohemia Interactive assets.
