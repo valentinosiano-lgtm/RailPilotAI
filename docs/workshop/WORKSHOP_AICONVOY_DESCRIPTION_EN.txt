@@ -1,0 +1,15 @@
+[h1]RailPilotAI - Moving AI Convoy Compatibility[/h1]
+This free optional add-on lets Moving AI Convoy vehicles wait at RailPilotAI level crossings on Chernarus. Supported vehicles stop before the closed barriers and continue along their route once the train clears the road and the barriers fully reopen. The adapter prevents stuck recovery from triggering during the crossing stop.
+
+[h2]Requirements[/h2]
+[list]
+[*]RailPilotAI
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3767913539]Moving AI Convoy by Triumph[/url], with its own required mods
+[/list]
+
+[h2]Installation[/h2]
+Add the compatibility add-on after both required mods in the server's [b]-mod[/b] list and load the same mods on the clients. Copy the add-on's public [b].bikey[/b] to the server's [b]keys[/b] folder. Use your existing Moving AI Convoy configuration to set the road routes. The adapter detects RailPilotAI crossings automatically.
+
+Tested with a three-vehicle convoy at the Komarovo crossing. The demo shows the convoy waiting while the train passes.
+
+https://www.youtube.com/watch?v=LWDcQ2tpJhc

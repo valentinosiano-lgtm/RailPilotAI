@@ -1,0 +1,146 @@
+{
+  "reference": "chernarus-ring-1",
+  "addons": {
+    "approach-preview": {
+      "source": "src/addons/approach-preview",
+      "prefix": "RailPilot\\ApproachPreview",
+      "reference_pbo_sha256": "5a76bb6a89286d20624d43dc672ae065e4aa3b4e2f086e09a405e9d8f6816677",
+      "compressed_json": {},
+      "retained_entries": 7
+    },
+    "arma2-coupler": {
+      "source": "src/addons/arma2-coupler",
+      "prefix": "RailPilot\\Arma2Coupler",
+      "reference_pbo_sha256": "372161fd10399b0b788c3a77d5cb7538fef1dde007fcb9e89ad3202b607b6f5d",
+      "compressed_json": {}
+    },
+    "arma2-crossing-code": {
+      "source": "src/addons/arma2-crossing-code",
+      "prefix": "RailPilot\\Crossings",
+      "reference_pbo_sha256": "aa60db474b3b891facb25d14b2f354587b206edcd91944abac985dce60f62b79",
+      "compressed_json": {},
+      "retained_entries": 10
+    },
+    "arma2-crossing-final": {
+      "source": "src/addons/arma2-crossing-final",
+      "prefix": "RailPilot\\Arma2CrossingAssets",
+      "reference_pbo_sha256": "9ba7f46f69048287674a0ca26d9fda3074429dbe435a9ce225d5b09903636980",
+      "compressed_json": {}
+    },
+    "asset-probe": {
+      "source": "src/addons/asset-probe",
+      "prefix": "RailPilot\\AssetProbe",
+      "reference_pbo_sha256": "672ca2436327e483d6fea9ab7be32d0b6166c1ea27d5ecbda9fb79ac705520b1",
+      "compressed_json": {},
+      "retained_entries": 4
+    },
+    "brake-air": {
+      "source": "src/addons/brake-air",
+      "prefix": "RailPilot\\BrakeAir",
+      "reference_pbo_sha256": "ed38a16eaf40eb5f8cff0829e102af5f04290a05680c44fde69bbc19a237569f",
+      "compressed_json": {},
+      "retained_entries": 4
+    },
+    "build-source": {
+      "source": "src/addons/build-source",
+      "prefix": "RailPilot\\AudioPreview",
+      "reference_pbo_sha256": "a2516dbe76f69775db732bfa4f64540a6b8f36fa779e6793ba7c9b45b0ef6486",
+      "compressed_json": {},
+      "retained_entries": 8
+    },
+    "convoy-cargo": {
+      "source": "src/addons/convoy-cargo",
+      "prefix": "RailPilot\\ConvoyCargo",
+      "reference_pbo_sha256": "53fcd84ecfa596058c163c1c45fa1cb3412642837a684c269d23c01eccdfba3e",
+      "compressed_json": {},
+      "retained_entries": 2
+    },
+    "first-route": {
+      "source": "src/addons/first-route",
+      "prefix": "RailPilot\\FirstRoute",
+      "reference_pbo_sha256": "8200a8f4880a23e295f4ea30450f2863a937df1e00a50d7605d434185ba105df",
+      "compressed_json": {
+        "route.json": "b1eb1bcf53ffdfe60ed04bd7be0d220d10fa935fa34d8b8db5d1e5a4a6309335"
+      },
+      "retained_entries": 37
+    },
+    "full-crossing-assets": {
+      "source": "src/addons/full-crossing-assets",
+      "prefix": "RailPilot\\FullCrossingAssets",
+      "reference_pbo_sha256": "456be503be78df3e9cb0b0ea5c4d5d7d298c96c17d68282e996ef29f54cd73a1",
+      "compressed_json": {}
+    },
+    "full-crossing": {
+      "source": "src/addons/full-crossing",
+      "prefix": "RailPilot\\FirstRouteFullCrossing",
+      "reference_pbo_sha256": "710fe4d02395a09b607ff0d1768710e8b36df0878dbc36afd0b72b565bf06a08",
+      "compressed_json": {},
+      "retained_entries": 3
+    },
+    "player-runover": {
+      "source": "src/addons/player-runover",
+      "prefix": "RailPilot\\PlayerRunOver",
+      "reference_pbo_sha256": "39b399010e167e50c1891e4ecca4578190bffa7f6d564afb09cbddfa19006907",
+      "compressed_json": {},
+      "retained_entries": 3
+    },
+    "rail-corridor-auto": {
+      "source": "src/addons/rail-corridor-auto",
+      "prefix": "RailPilot\\RailCorridorAutomatic",
+      "reference_pbo_sha256": "4c7af86607a819c1b903cfc2d8ce459dc237da79e48336211a60feacf9ad17f0",
+      "compressed_json": {},
+      "retained_entries": 4
+    },
+    "rail-corridor": {
+      "source": "src/addons/rail-corridor",
+      "prefix": "RailPilot\\RailCorridor",
+      "reference_pbo_sha256": "85a313daad8dc556b695ea9c7664235605a6dd85df36de442870fd288f228487",
+      "compressed_json": {
+        "berezino-corridor.json": "59252948f80f8f271539a2b95cc404fb6882eb343b63eda8104d93fe703fa7bf",
+        "corridor.json": "67c3dbc6d75c99085b099ad0c6daeaf9d63cf2aefef713bdda3c47ff6b33a10f",
+        "novaya-corridor.json": "944d2a210c113c14a0ae2dfeadb41934f8947aa12deef2b7afaa885437ee2f85",
+        "novodmitrovsk-corridor.json": "e487e529165c1183ce931d9082efd01f864b4cf3b23f5e8c8b53f43eb9872a35",
+        "severograd-corridor.json": "fa2628544810f669153f142ec96410d2113430adf7e2a590b0a65ff6afde28a6",
+        "south-coast-corridor.json": "3e1ac992b746aef55e0d9e49ded6ec42d55a4bf0adee7dd2df14ac8f0e62330f",
+        "svetloyarsk-corridor.json": "8617982baa761f2d0af5634de7779e3f22117be4e5097289559bc8e5f2129081",
+        "west-corridor.json": "05d33456ab16a6589465a19e424fdcdc4117bcbc4576db8708a1c25ee38019d6"
+      },
+      "retained_entries": 11
+    },
+    "rail-obstacle-bypass": {
+      "source": "src/addons/rail-obstacle-bypass",
+      "prefix": "RailPilot\\RailObstacleBypass",
+      "reference_pbo_sha256": "8cf02e118d3edc7e80b6863264e9520e6c3b5ba24d1f19d1079fd66853e6075f",
+      "compressed_json": {},
+      "retained_entries": 7
+    },
+    "rail-obstacles": {
+      "source": "src/addons/rail-obstacles",
+      "prefix": "RailPilot\\RailObstacles",
+      "reference_pbo_sha256": "ec828bf3caa0a755244f1c89d7a087ed8f4adb57dac1a57047220d8c6af0cec4",
+      "compressed_json": {},
+      "retained_entries": 4
+    },
+    "scripts": {
+      "source": "src/addons/scripts",
+      "prefix": "RailPilot\\Scripts",
+      "reference_pbo_sha256": "2bf6c845f43e31388d0a26d71a1cad7636905a5282d2c76c9bbd03331a82c10a",
+      "compressed_json": {},
+      "retained_entries": 5
+    },
+    "train-brake-audio": {
+      "source": "src/addons/train-brake-audio",
+      "prefix": "RailPilot\\TrainBrakeAudio",
+      "reference_pbo_sha256": "98e47092e5d1f76e4e798aa5ff29118790be6c725e4715691916dbcccdfcbad0",
+      "compressed_json": {},
+      "retained_entries": 5
+    },
+    "ai-convoy-traffic": {
+      "source": "src/optional/ai-convoy-traffic",
+      "prefix": "RailPilot\\AIConvoyTraffic",
+      "reference_pbo_sha256": "54716fc92163e8a280e2a9f697e31dd5813ce647e4d6459cd571ccf38e76f9b9",
+      "compressed_json": {},
+      "retained_entries": 3
+    }
+  }
+}

@@ -1,0 +1,43 @@
+RailPilot Arma 2 crossing asset adaptation
+Copyright original model, UVs, textures and material: Bohemia Interactive a.s.
+
+Original licensed material:
+https://portal.bohemia.net/community/licenses/licensed-data-packages
+A2SM_Data_ADPL-SA_APL-SA.zip:
+  Structures/CA/Structures/Rail/Rail_Misc/rail_Zavora.p3d
+  Structures/CA/Structures/Rail/Rail_Misc/Data/zavora.rvmat
+ALDP_A2_PBOs_ADPL-SA_APL-SA_part3.zip:
+  ALDP_A2_PBOs_APL-SA_part3/structures.pbo
+  Rail/Rail_Misc/Data/zavora_{co,nohq,smdi}.paa
+
+This adaptation is offered under the Arma and DayZ Public License Share Alike
+(ADPL-SA), selected from the licenses offered by Bohemia Interactive:
+https://www.bohemia.net/en/licenses/arma-and-dayz-public-license-share-alike-adpl-sa
+Official dual-license announcement:
+https://www.bohemia.net/en/blog/licensed-data-package-for-dayz
+
+The original archive's APL-SA license and readme are retained in licenses/.
+ADPL-SA is selected for this DayZ adaptation. Attribution, noncommercial use,
+use within Arma/DayZ and ShareAlike conditions apply. Consult the license
+linked above for the complete binding terms, including warranty disclaimer.
+No endorsement by Bohemia Interactive is implied.
+
+Changes by the RailPilot project, 7 November 2026:
+- Original Arma 2 mesh and UV coordinates retained without DayZ model input.
+- Existing Arma 2 moving selection and pivot adapted to RPArm animation.
+- View geometry moving selections reconstructed from Arma 2 components.
+- Fire geometry derived from the Arma 2 view geometry.
+- Diagnostic and warning memory points calculated from Arma 2 geometry.
+- House/autocenter properties adapted for DayZ; original mass retained.
+- Texture/material paths made self-contained; legacy penetration materials
+  removed; missing environment texture replaced by a procedural neutral color.
+- New skeleton/configuration authored for DayZ.
+
+Free, noncommercial distribution only. The asset is separate from RailPilot
+controller code and contains no audio or copied DayZ geometry/textures.
+
+Additional correction: embedded face UV coordinates are preserved during export. Original Bohemia WhiteBlinking MarkerLights configuration restored verbatim in field values; no additional Arma 2 red light sequence is claimed.
+
+Preserved fallback: original white marker position retained, native white MarkerLights configuration inactive. RailPilot red alarm system remains in a separate code PBO. No DayZ barrier geometry or textures included.
+
+14 November 2026: RailPilotAI additional opposing gates at Crossing_2871 only. Above-hinge arm geometry and arm-tip memory extended vertically by 1.75 in all visual/geometry/view/fire LODs, preserving hinge, cabinet, textures, UVs and licensing. The two original gates and all other crossings retain their original assets. Derived solely from the preserved official Arma 2 source; no DayZ geometry copied.

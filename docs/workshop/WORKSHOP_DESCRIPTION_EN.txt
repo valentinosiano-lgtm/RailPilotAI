@@ -1,0 +1,57 @@
+[h1]RailPilotAI[/h1]
+RailPilotAI is a free DayZ mod that runs a six-car train on a continuous loop around Chernarus. You can board the wagons, travel between stations and get off at any scheduled stop. The train stops for five minutes at each station before continuing around the map.
+
+[h2]RailPilotAI overview video[/h2]
+https://www.youtube.com/watch?v=flaP-WDbHXk
+
+[h2]How it works[/h2]
+[list]
+[*]Level crossing barriers lower before the train arrives and reopen once the last wagon has cleared the road.
+[*]The train brakes for large obstacles. It continues when the track clears. If an obstacle stays in place, the train can jump ahead to a clear stretch of track once everyone has stepped off and there is room for the entire train.
+[*]A narrow construction corridor follows the train's footprint with one metre of clearance on each side. The protection is built into RailPilotAI and includes BaseBuildingPlus support.
+[*]After a restart, the train returns to its last valid saved position and waits two minutes before resuming. Returning passengers recorded in the save are placed on clear ground near the recovery point when they log in.
+[/list]
+
+[b]Route[/b]
+Komarovo > Kamenka > Zelenogorsk > Myshkino West Yard > Novaya Petrovka > Severograd > Novodmitrovsk > Svetloyarsk > Berezino North > Solnechny > Kamyshovo > Elektrozavodsk > Chernogorsk > Balota > Komarovo.
+
+[h2]Installation on a private DayZ server[/h2]
+[olist]
+[*]Install RailPilotAI on a dedicated Chernarus server. Add it to your existing launch options using [b]-mod=@RailPilotAI[/b] or the equivalent path in your hosting panel. Players load the same version when they join.
+[*]Copy the public [b].bikey[/b] from the mod's [b]keys[/b] folder to the server's [b]keys[/b] folder. Keep your current mission and [b]init.c[/b].
+[*]With the server stopped, use the [b]railpilot_port_loot.py[/b] script from the server setup files with your active mission folder. It removes the five loot spawn entries for the static rail vehicles that RailPilotAI clears from the track near Svetloyarsk. The first command previews the changes. The second applies them and backs up the original XML.
+[/olist]
+
+[code]python railpilot_port_loot.py "path/to/active-mission"
+python railpilot_port_loot.py "path/to/active-mission" --apply[/code]
+
+Keep [b]RailPilot/Ring[/b] in the server's profiles directory between restarts. It contains the train's save files.
+
+[h2]What server owners can customise[/h2]
+RailPilotAI creates [b]RailPilot/Service.json[/b] in the server's profiles directory on first launch. You can create it before first launch to choose a different starting station.
+
+[code]{
+  "Schema": 1,
+  "Enabled": true,
+  "StartStation": "Komarovo"
+}[/code]
+
+[list]
+[*][b]Enabled[/b] turns the train service on or off. Keep [b]Schema[/b] set to [b]1[/b].
+[*][b]StartStation[/b] selects the first stop for a new service. An existing save takes priority. Use the station names from the route above, except enter [b]Scalo ovest Myshkino[/b] for Myshkino West Yard and [b]Berezino Nord[/b] for Berezino North.
+[*]The route, map, stop duration, train composition, speed, crossing positions and timing, construction clearance, and restart wait are fixed in the standard release. Changing these requires a source-level modification.
+[/list]
+
+[h2]Optional Moving AI Convoy support[/h2]
+For servers using Moving AI Convoy, install the separate [b]RailPilotAI - Moving AI Convoy Compatibility[/b] add-on. Load the adapter after RailPilotAI and Moving AI Convoy in the server and client mod lists. Install the public keys for the mods you use. The adapter holds supported AI vehicles at closed crossings and releases them once the barriers reopen. Configure road convoy routes through Moving AI Convoy.
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3767913539]Moving AI Convoy by Triumph[/url]
+
+[h2]Level crossing demo[/h2]
+https://www.youtube.com/watch?v=LWDcQ2tpJhc
+
+[h2]Additional gameplay video[/h2]
+https://www.youtube.com/watch?v=S1sF7C5dm0M
+
+[h2]Credits[/h2]
+Created and directed by Valentino. Technical development with ChatGPT (OpenAI). Adapted Arma 2 barrier and coupling assets by Bohemia Interactive are credited under ADPL-SA in the included licence notices.

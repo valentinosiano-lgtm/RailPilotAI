@@ -1,0 +1,137 @@
+{
+  "source_model_sha256": "8e72d1835800adce4b76b2e0e7f4426734c643fd31113114f875c84fc7932631",
+  "prepared_model_sha256": "bf030a01bec6947cf97512e3e44744b7131bb193d4e1ed482369ea5eece35854",
+  "geometry_origin": "Exclusively verified official Arma 2 MLOD; no DayZ geometry/UV/material input",
+  "lods": [
+    {
+      "resolution": 0.0,
+      "vertices": 544,
+      "faces": 505,
+      "arm_vertices": 196
+    },
+    {
+      "resolution": 1.0,
+      "vertices": 281,
+      "faces": 271,
+      "arm_vertices": 104
+    },
+    {
+      "resolution": 10000.0,
+      "vertices": 281,
+      "faces": 486,
+      "arm_vertices": 164
+    },
+    {
+      "resolution": 10010.0,
+      "vertices": 82,
+      "faces": 128,
+      "arm_vertices": 60
+    },
+    {
+      "resolution": 10000000000000.0,
+      "vertices": 80,
+      "faces": 60,
+      "arm_vertices": 56
+    },
+    {
+      "resolution": 1000000000000000.0,
+      "vertices": 7,
+      "faces": 0,
+      "arm_vertices": 2
+    },
+    {
+      "resolution": 6000000000000000.0,
+      "vertices": 364,
+      "faces": 327,
+      "arm_vertices": 192
+    },
+    {
+      "resolution": 7000000000000000.0,
+      "vertices": 364,
+      "faces": 327,
+      "arm_vertices": 192
+    }
+  ],
+  "textures": {
+    "zavora_co.paa": {
+      "pbo_entry": "Rail\\Rail_Misc\\Data\\zavora_co.paa",
+      "sha256": "476d7fc6c857c09a67881f7486d9b24a6a7a6d434b2e7449db1ff268ff967156",
+      "bytes": 572266
+    },
+    "zavora_nohq.paa": {
+      "pbo_entry": "Rail\\Rail_Misc\\Data\\zavora_nohq.paa",
+      "sha256": "33d1550283269f5b79ed0f826664521e83505d1eef426005389df00d51195959",
+      "bytes": 2163772
+    },
+    "zavora_smdi.paa": {
+      "pbo_entry": "Rail\\Rail_Misc\\Data\\zavora_smdi.paa",
+      "sha256": "51535906bdd00e164d2a7071d396420db1330472770cbd194ebcd104a554527e",
+      "bytes": 790525
+    }
+  },
+  "tip_internal_z_up": [
+    -0.27564331889152527,
+    -0.04981681820936501,
+    6.11820125579834
+  ],
+  "red_lamp_internal_z_up": [
+    0.30579298734664917,
+    -0.727976122379303,
+    2.433704763650894
+  ],
+  "uv_export_validation": {
+    "face_uvs_and_uvsets_preserved": true,
+    "maximum_coordinate_error": 0.0
+  },
+  "source_provenance": {
+    "source_url": "https://tr4.bistudio.com/A2SM_Data_ADPL-SA_APL-SA.zip",
+    "official_archive_bytes": 741561650,
+    "local_archive": "A2SM_Data_ADPL-SA_APL-SA.zip",
+    "local_archive_sha256": "7fb864e2735de0219fc27ae7a8bc0bcf59f290eafbd6ec10a0887c65c8f573cf",
+    "verification": "Selected files byte-identical to official HTTPS archive; ZIP CRC checked",
+    "package_page": "https://portal.bohemia.net/community/licenses/licensed-data-packages",
+    "dual_license_announcement": "https://www.bohemia.net/en/blog/licensed-data-package-for-dayz",
+    "selected_license": "ADPL-SA",
+    "license_url": "https://www.bohemia.net/en/licenses/arma-and-dayz-public-license-share-alike-adpl-sa",
+    "files": [
+      {
+        "entry": "Structures/CA/Structures/Rail/Rail_Misc/rail_Zavora.p3d",
+        "bytes": 392237,
+        "sha256": "8e72d1835800adce4b76b2e0e7f4426734c643fd31113114f875c84fc7932631",
+        "official_crc32": "f55c09dd"
+      },
+      {
+        "entry": "Arma_Public_License_Share_Alike.txt",
+        "bytes": 17554,
+        "sha256": "cdc3c8cbdf553f718df1df8927904403f25063ffc10e00026099240aedfc00f9",
+        "official_crc32": "70b39212"
+      },
+      {
+        "entry": "readme_A2SM_APL-SA.txt",
+        "bytes": 4744,
+        "sha256": "076967a6ab2be7a7c3f92bb35b37ad49fe651e1ac25e40d55bace5ff22c5654e",
+        "official_crc32": "8970e5e8"
+      },
+      {
+        "entry": "Structures/CA/Structures/Rail/Rail_Misc/Data/zavora.rvmat",
+        "bytes": 2255,
+        "sha256": "87554e09f1b35816fa80344df47012a1c19bec243c9921416814f6e018dd2856",
+        "official_crc32": "8f7dbba2"
+      }
+    ]
+  },
+  "texture_pbo_provenance": {
+    "source_url": "https://tr4.bistudio.com/ALDP_A2_PBOs_ADPL-SA_APL-SA_part3.zip",
+    "entry": "ALDP_A2_PBOs_APL-SA_part3/structures.pbo",
+    "bytes": 907914948,
+    "sha256": "fe6692d90859c882861ccb875f6bfb6d73a5f5ed91d6fb317a1e4177ab812b50",
+    "crc32": "f7ebc847",
+    "elapsed_seconds": 11.625
+  },
+  "license": "ADPL-SA",
+  "dayz_runtime_validation": "pending",
+  "native_white_enabled": false,
+  "marker_offset_applied": false,
+  "final_selection": "Corrected Arma 2 model/texture plus approved RailPilot red/audio system",
+  "runtime_validation": "separate integrated report required"
+}

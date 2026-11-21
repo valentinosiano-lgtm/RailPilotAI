@@ -1,0 +1,4 @@
+*.json -text
+*.c -text
+*.cpp -text
+*.cfg -text

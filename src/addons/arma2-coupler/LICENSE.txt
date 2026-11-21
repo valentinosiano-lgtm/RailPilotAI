@@ -1,0 +1,26 @@
+Arma2 hook and screw coupling: Copyright (c) 2013 Bohemia Interactive a.s.
+Original material is provided by Bohemia Interactive in its Licensed Data Packages.
+Selected licence for these adapted assets: Arma and DayZ Public Licence Share Alike (ADPL-SA).
+https://www.bohemia.net/en/licenses/arma-and-dayz-public-license-share-alike-adpl-sa
+
+Official package listing and dual-licence announcement:
+https://www.bohemia.net/en/licenses/licensed-data-packages
+https://www.bohemia.net/en/blog/licensed-data-package-for-dayz
+Models: https://tr4.bistudio.com/A2SM_Data_ADPL-SA_APL-SA.zip
+Textures: https://tr4.bistudio.com/ALDP_A2_PBOs_ADPL-SA_APL-SA_part3.zip
+
+The historical APL-SA notice/readme are retained in licenses/. Bohemia's
+official dual-licence offer permits selecting ADPL-SA for these packages.
+Noncommercial use, Arma/DayZ only, attribution and ShareAlike apply.
+The derived hook/screw models, adapted material and included original textures
+are offered under ADPL-SA without additional restrictions or endorsement claims.
+The linked full licence includes the applicable warranty/liability exclusions.
+
+Adaptation14November2026 for RailPilotAI: hook selection extracted using
+Object Builder O2Script; locomotive body removed; screw-only model separated,
+rotated and centered; extension bone adjusts straight screw span between hooks.
+UV sets and five original texture images preserved. Material paths relocated;
+missing old generic environment map replaced by a neutral procedural texture.
+No DayZ model geometry, UVs or textures were copied to this derived asset.
+The train's existing transport/motion/collision assets are separate and unchanged.
+Asset provenance, hashes and changes: provenance.json. No public release performed.

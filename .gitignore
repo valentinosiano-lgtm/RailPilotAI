@@ -1,0 +1,9 @@
+*.pbo
+*.bisign
+*.biprivatekey
+*.log
+.local/
+dist/
+__pycache__/
+/src/addons/first-route/route.json
+/src/addons/rail-corridor/*.json

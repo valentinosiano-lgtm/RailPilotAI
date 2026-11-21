@@ -1,0 +1,71 @@
+{
+  "archive": "A2SM_Data_ADPL-SA_APL-SA (2).zip",
+  "archive_sha256": "7fb864e2735de0219fc27ae7a8bc0bcf59f290eafbd6ec10a0887c65c8f573cf",
+  "model_entry": "Structures/CA/Structures/Rail/Rail_Loco/loco_742_blue.p3d",
+  "source_model_sha256": "6f580ceb8d58c0ed0c90caf573819c675fc6ee4c49a8de44d640a839728a6eaf",
+  "native_extracted_sha256": "f07625e284470f9f18879d6783c62a6cb9e6ae47817cfca17bf91d134325029f",
+  "object_builder_executable": "O2Script.exe",
+  "extraction_script_sha256": "bed51e7e074e7fa05e9b75b55438af851a24d6e18c20bd882255755a1c87ec61",
+  "native_extracted_faces": 167,
+  "screw_faces": 119,
+  "screw_vertices": 144,
+  "nominal_length": 0.5315935164690018,
+  "original_face_geometry_and_uvs_verified": true,
+  "uv_export": {
+    "rp_hook_original": {
+      "face_uvs_and_uvsets_preserved": true,
+      "maximum_coordinate_error": 0.0
+    },
+    "rp_screw_link": {
+      "face_uvs_and_uvsets_preserved": true,
+      "maximum_coordinate_error": 0.0
+    }
+  },
+  "texture_pbo_sha256": "fe6692d90859c882861ccb875f6bfb6d73a5f5ed91d6fb317a1e4177ab812b50",
+  "texture_source_url": "https://tr4.bistudio.com/ALDP_A2_PBOs_ADPL-SA_APL-SA_part3.zip",
+  "textures": {
+    "spod_co": {
+      "entry": "Rail\\Rail_Loco\\Data\\spod_co.paa",
+      "sha256": "4e4be657cb8041d54fd2b914c1872a87e7f46faebbc4e3d1bb09757d2aea51c9",
+      "bytes": 147276
+    },
+    "spod_nohq": {
+      "entry": "Rail\\Rail_Loco\\Data\\spod_nohq.paa",
+      "sha256": "4129fcdddb22625fdc1af52e51b06c4186eddbc2b5a399a8b90215010ab4c5d9",
+      "bytes": 334341
+    },
+    "spod_smdi": {
+      "entry": "Rail\\Rail_Loco\\Data\\spod_smdi.paa",
+      "sha256": "23e99f4fac8e91df1f74122031102fecd89eb7d83108a1296bd7f3d4614be383",
+      "bytes": 104024
+    },
+    "2_dt": {
+      "entry": "Rail\\Rail_Loco\\Data\\2_dt.paa",
+      "sha256": "d648fdd6233aae8b08fa97fb4ae55ce3c390ad010930c2b44c25583e7ef83461",
+      "bytes": 211365
+    },
+    "2_mc": {
+      "entry": "Rail\\Rail_Loco\\Data\\2_mc.paa",
+      "sha256": "eaa912a84aea7e58060bcc37e7dee5ee6925541b928238c401a1c0e0fda3ab13",
+      "bytes": 5042471
+    }
+  },
+  "selected_license": "ADPL-SA",
+  "license_urls": [
+    "https://www.bohemia.net/en/licenses/licensed-data-packages",
+    "https://www.bohemia.net/en/blog/licensed-data-package-for-dayz",
+    "https://www.bohemia.net/en/licenses/arma-and-dayz-public-license-share-alike-adpl-sa"
+  ],
+  "material_changes": [
+    "Relocated original five texture paths; both UV sets retained",
+    "Missing legacy generic environment map replaced by neutral procedural environment"
+  ],
+  "geometry_changes": [
+    "Object Builder extraction of positive-end -hak selection",
+    "Separate original hook and screw-only model; centered pivot; screw rotated for horizontal use",
+    "Far-end translation selection adjusts straight screw span; loop dimensions retained"
+  ],
+  "source_is_official_arma2_only": true,
+  "dayz_geometry_copied": false,
+  "runtime_validation_pending": true
+}

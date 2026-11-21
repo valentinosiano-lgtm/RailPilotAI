@@ -1,0 +1,1 @@
+Preserved RailPilot fallback: official Arma 2 model and textures, corrected original UVs, original marker coordinates. Native white MarkerLights disabled. Approved RailPilot red flashing light, original owner alarm and timing are provided by the separate unchanged crossing controller.
