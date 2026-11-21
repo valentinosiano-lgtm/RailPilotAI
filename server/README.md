@@ -18,4 +18,6 @@ Keep `RailPilot/Ring` in the server profiles folder between restarts. On recover
 
 RailPilotAI announces arrivals, departures and skipped stations to connected players in Italian. Each arrival includes the planned dwell and following station. If the server restarts during a dwell, the next announcement is sent when the train departs.
 
+When an empty train bypasses an obstacle, it stops at the landing point for two minutes. Passengers can walk to the train and reboard before it gradually resumes the route.
+
 For Moving AI Convoy support, load the built adapter after RailPilotAI and Moving AI Convoy on the server and clients. Install the public keys for both dependencies and the adapter. Road convoy routes are configured in Moving AI Convoy.

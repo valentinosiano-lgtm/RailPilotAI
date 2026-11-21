@@ -23,6 +23,7 @@ modded class RPConvoyService
     static const float EMPTY_SECONDS = 3.0;
     static const float RETRY_SECONDS = 1.0;
     static const float PASSENGER_POLL = 0.10;
+    static const float POST_JUMP_DWELL_SECONDS = 120.0;
 
     protected ref RPBypassPassengers m_BypassPassengers = new RPBypassPassengers;
     protected ref RPBypassDestination m_BypassDestination = new RPBypassDestination;
@@ -36,6 +37,8 @@ modded class RPConvoyService
     protected int m_BlockedStop = -1;
     protected float m_BlockedStopTime;
     protected float m_StationSearch;
+    protected float m_PostJumpDwell;
+    protected float m_PostJumpSync;
 
     int RPBypasses() { return m_BypassEpoch; }
     float RPEmptySeconds() { return m_BypassElapsed; }
@@ -75,6 +78,9 @@ modded class RPConvoyService
     protected void RPCommitBypass(float destination)
     {
         float previous = m_Clock;
+        m_BypassPassengers.Notify(m_Units, "Il treno si riposiziona oltre l'ostacolo e ti aspetta per 2 minuti.");
+        m_PostJumpDwell = POST_JUMP_DWELL_SECONDS;
+        m_PostJumpSync = 0;
         m_BypassEpoch++;
         m_Clock = destination;
         m_ObstacleRate = 0;
@@ -86,6 +92,7 @@ modded class RPConvoyService
         foreach (RP_ConvoyUnit unit : m_Units)
         {
             unit.RPSetObstacleMotionRate(0);
+            unit.RPSetObstacleBrakeWindow(0, 0);
             unit.RPSetBypassEpoch(m_BypassEpoch);
         }
         // One zero-speed authoritative snapshot for the whole consist. The
@@ -198,6 +205,22 @@ modded class RPConvoyService
     override void Tick(float dt)
     {
         bool active = GetGame().IsServer() && dt > 0 && m_Route && m_Units.Count() == RPConvoySpec.COUNT;
+        if (active && m_PostJumpDwell > 0)
+        {
+            // Time for riders to reach the train runs independently of the route clock.
+            float held = Math.Min(dt, m_PostJumpDwell);
+            m_PostJumpDwell -= held;
+            dt -= held;
+            m_PostJumpSync += held;
+            if (m_PostJumpSync >= 0.1 || m_PostJumpDwell == 0)
+            {
+                super.Tick(0);
+                m_PostJumpSync = 0;
+            }
+            if (m_PostJumpDwell > 0) return;
+            Print("[RailPilotBypass] POST_JUMP_DWELL_COMPLETE");
+            if (dt <= 0) return;
+        }
         float elapsed = Math.Min(dt, 0.25);
         if (active && m_BlockedStop >= 0 && (m_Route.Cyclic || m_BlockedStop < m_Route.Stops.Count() - 1) && m_BlockedStopTime >= RPConvoyRoute.FORCED_STOP_SECONDS)
         {
@@ -244,6 +267,8 @@ modded class RPConvoyService
     {
         super.Stop();
         m_BypassEpoch = 0;
+        m_PostJumpDwell = 0;
+        m_PostJumpSync = 0;
         RPResetBypassWait();
         RPResetStationWait();
     }

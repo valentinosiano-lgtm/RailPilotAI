@@ -110,7 +110,7 @@
     "rail-obstacle-bypass": {
       "source": "src/addons/rail-obstacle-bypass",
       "prefix": "RailPilot\\RailObstacleBypass",
-      "reference_pbo_sha256": "8cf02e118d3edc7e80b6863264e9520e6c3b5ba24d1f19d1079fd66853e6075f",
+      "reference_pbo_sha256": "ca3231e49f01681522a8bfe4acb9842bb66df233066163c182537547e98eb531",
       "compressed_json": {},
       "retained_entries": 7
     },

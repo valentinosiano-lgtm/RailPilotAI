@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=flaP-WDbHXk
 [list]
 [*]In-game station announcements tell connected players where the train is, how long it will stop and which station comes next. Announcements are in Italian.
 [*]Level crossing barriers lower before the train arrives and reopen once the last wagon has cleared the road.
-[*]The train brakes for large obstacles. It continues when the track clears. If an obstacle stays in place, the train can jump ahead to a clear stretch of track once everyone has stepped off and there is room for the entire train.
+[*]The train brakes for large obstacles. It continues when the track clears. If an obstacle stays in place, the train can jump ahead to a clear stretch of track once everyone has stepped off and there is room for the entire train. It waits at the landing point for two minutes so passengers can catch up and board again.
 [*]A narrow construction corridor follows the train's footprint with one metre of clearance on each side. The protection is built into RailPilotAI and includes BaseBuildingPlus support.
 [*]After a restart, the train returns to its last valid saved position and waits two minutes before resuming. Returning passengers recorded in the save are placed on clear ground near the recovery point when they log in.
 [/list]
