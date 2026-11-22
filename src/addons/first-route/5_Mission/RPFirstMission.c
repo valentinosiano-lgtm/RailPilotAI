@@ -49,12 +49,12 @@ class RPFirstRun
         if (eventName == "arrival")
         {
             int minutes = Math.Round(station.Dwell / 60);
-            message = string.Format("Il convoglio ferroviario è arrivato a %1. Sosterà per %2 minuti, poi ripartirà verso %3.", station.Name, minutes, next);
+            message = string.Format("The train has arrived at %1. It will stop for %2 minutes before continuing to %3.", station.Name, minutes, next);
         }
         else if (eventName == "departure")
-            message = string.Format("Il convoglio ferroviario è partito da %1. Prossima fermata: %2.", station.Name, next);
+            message = string.Format("The train has departed from %1. Next stop: %2.", station.Name, next);
         else
-            message = string.Format("Il convoglio ferroviario ha saltato la fermata di %1 per un ostacolo. Prossima fermata: %2.", station.Name, next);
+            message = string.Format("The train skipped %1 because the track was blocked. Next stop: %2.", station.Name, next);
         BroadcastStationAnnouncement(message);
     }
 

@@ -71,7 +71,7 @@ modded class ActionDeployObject
             Hologram hologram=action_data.m_Player.GetHologramServer();
             if (hologram && hologram.RPCorridorBlocked())
             {
-                action_data.m_Player.MessageStatus("Non puoi piazzare oggetti nel passaggio riservato al treno.");
+                action_data.m_Player.MessageStatus("You cannot place objects in the railway corridor.");
                 return;
             }
         }

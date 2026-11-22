@@ -16,7 +16,7 @@ Use the station names in the route. Enter `Scalo ovest Myshkino` for Myshkino We
 
 Keep `RailPilot/Ring` in the server profiles folder between restarts. On recovery the train waits two minutes at its saved position. Returning passengers recorded in the save are placed on clear ground near the recovery point when they log in.
 
-RailPilotAI announces arrivals, departures and skipped stations to connected players in Italian. Each arrival includes the planned dwell and following station. If the server restarts during a dwell, the next announcement is sent when the train departs.
+RailPilotAI announces arrivals, departures and skipped stations to connected players in English. Each arrival includes the planned dwell and following station. If the server restarts during a dwell, the next announcement is sent when the train departs.
 
 When an empty train bypasses an obstacle, it stops at the landing point for two minutes. Passengers can walk to the train and reboard before it gradually resumes the route.
 

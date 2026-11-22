@@ -78,7 +78,7 @@ modded class RPConvoyService
     protected void RPCommitBypass(float destination)
     {
         float previous = m_Clock;
-        m_BypassPassengers.Notify(m_Units, "Il treno si riposiziona oltre l'ostacolo e ti aspetta per 2 minuti.");
+        m_BypassPassengers.Notify(m_Units, "The train is moving past the obstacle. It will wait for 2 minutes so you can catch up.");
         m_PostJumpDwell = POST_JUMP_DWELL_SECONDS;
         m_PostJumpSync = 0;
         m_BypassEpoch++;
@@ -108,7 +108,7 @@ modded class RPConvoyService
         if (!m_BypassWaiting)
         {
             m_BypassWaiting = true;
-            m_BypassPassengers.Notify(m_Units, "Binario bloccato. Liberate il passaggio oppure scendete tutti per far avanzare il treno.");
+            m_BypassPassengers.Notify(m_Units, "Track blocked. Clear the track or have everyone get off so the train can continue.");
         }
         m_BypassPoll -= elapsed;
         if (m_BypassPoll <= 0)
@@ -119,8 +119,8 @@ modded class RPConvoyService
                 m_BypassElapsed = 0;
                 m_BypassDenied = "";
                 m_BypassRetry = 0;
-                if (empty) m_BypassPassengers.Notify(m_Units, "Treno vuoto. Il convoglio puo avanzare fra 3 secondi.");
-                else m_BypassPassengers.Notify(m_Units, "Salto sospeso. Il treno attende i passeggeri.");
+                if (empty) m_BypassPassengers.Notify(m_Units, "Everyone is off the train. It can move past the obstacle in 3 seconds.");
+                else m_BypassPassengers.Notify(m_Units, "The train is waiting for all passengers to get off before bypassing the obstacle.");
                 m_BypassEmpty = empty;
                 m_BypassPoll = PASSENGER_POLL;
                 return;
@@ -141,7 +141,7 @@ modded class RPConvoyService
             {
                 Print("[RailPilotBypass] WAIT " + reason);
                 if (reason != "immediate obstruction changed")
-                    m_BypassPassengers.Notify(m_Units, "Il treno attende uno spazio libero per avanzare.");
+                    m_BypassPassengers.Notify(m_Units, "The train is waiting for a clear stretch of track ahead.");
                 m_BypassDenied = reason;
             }
             return;
@@ -162,7 +162,7 @@ modded class RPConvoyService
             RPResetBypassWait();
             RPResetStationWait();
             m_BlockedStop = station;
-            m_BypassPassengers.NotifyRiders(m_Units, "Binario bloccato. Liberate il passaggio oppure scendete tutti per far avanzare il treno.");
+            m_BypassPassengers.NotifyRiders(m_Units, "Track blocked. Clear the track or have everyone get off so the train can continue.");
         }
         if (m_BlockedStopTime < RPConvoyRoute.FORCED_STOP_SECONDS)
         {
@@ -170,7 +170,7 @@ modded class RPConvoyService
             if (m_BlockedStopTime >= RPConvoyRoute.FORCED_STOP_SECONDS)
             {
                 Print("[RailPilotBypass] FORCED_STOP_COMPLETE " + m_Route.Stops[station].Name);
-                m_BypassPassengers.NotifyRiders(m_Units, "Salto sospeso. Il treno attende i passeggeri.");
+                m_BypassPassengers.NotifyRiders(m_Units, "The train is waiting for all passengers to get off before bypassing the obstacle.");
             }
             // Let the mission persist completion before the next update can jump.
             return;
